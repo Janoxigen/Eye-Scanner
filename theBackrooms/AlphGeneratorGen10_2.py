@@ -927,27 +927,28 @@ class AlphGeneratorGen10_2:
             print("------------------")
 
         # --- VBCX-filling ---
+        print("filling VBCX...")
         VBCX = ValBasedCX(alphLen)
         TupleValAssignment = AlphGeneratorGen10_2.convert_ECvalAssignment_to_TupleValAssignment(CX, EC_Value_Assignment_dict)
         start = timer()
         AlphGeneratorGen10_2.fill_VBCX_with_TupleValAssignment(VBCX, TupleValAssignment)
         stopped_time = timer() - start
         if verbose:
-            VBCX.DB.print_EC_Table_detailed()
+            # VBCX.DB.print_EC_Table_detailed()  # testprint
             print("VBCX-filling took: ", stopped_time)
-            print("------------------")
-            print("------------------")
-            print("------------------")
-            print("------------------")
 
         # --- Alphabet-fitting ---
+        print("Alphabet-fitting...")
         relevantLetters, pointlessLetters = AlphGeneratorGen10_2.decide_relevancy_of_letters(isomorphGroupList, possible_letters)
         start = timer()
         result = AlphGeneratorGen10_2.generate_alphabet_from_VBCX(VBCX, remaining_possible_letters=relevantLetters, alphLen=alphLen, fillerLetters=pointlessLetters)
         stopped_time = timer() - start
         if verbose:
-            print(f"Result={result}")
             print("Alphabet-fitting took: ", stopped_time)
+            print("------------------")
+            print("------------------")
+            print("------------------")
+            print("------------------")
 
         return result
 

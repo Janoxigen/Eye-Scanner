@@ -1,0 +1,93 @@
+
+### A possible Output might look like this:
+
+entered Gen10.2-Generation.
+finished CX-ingestion. (968 ECs)
+gathering ARs... (this might take a while)
+30 seconds for AR-gathering
+gathered 5544 ARs (already arithmetically deduplicated).
+finished broadening those ARs.
+ECsizes= ********long list of numbers********
+EC-IDs = ********long list of numbers********
+TODOlst= ********small list of numbers********
+ActionCounts for each stage:
+0=0
+1=17
+2=148
+3=425
+4=627
+5=258
+6=1797
+7=780
+8=611
+9=545
+10=714
+11=94
+0
+ 1
+  2
+   3
+    4
+     5
+      6
+       7
+       7            ### This is a Visualization of the Recursions, for debugging purposes
+       7            ### (Sometimes this part takes a looong time, if the Isomorphs are "unlucky" (that happens quite often))
+      6
+       7
+      6
+       7
+       7
+       7
+      6
+       7
+       7
+       7
+        8
+         9
+          10
+           11
+-1=
+0=
+1= 26, 53, 67, 213, 479, 555, 578, 678, 753, 794, 912
+2= 72, 102, 145, 186, 348, 443, 454, 694, 834, 853
+3= 105, 169, 294, 326, 421, 530, 567, 595, 718, 737, 793, 913, 969
+4= 28, 34, 85, 222, 255, 284, 369, 399, 422, 474, 539, 562, 571, 637, 885
+5= 15, 47, 108, 129, 152, 265, 328, 363, 392, 473, 591, 679, 815
+...
+...
+*many such rows*    ### this part basically tells us for each Value 0-82 which ECs were assigned to said Value.
+...
+...
+79= 24, 36, 96, 209, 272, 301, 367, 383, 440, 511, 529, 566, 569, 608, 895
+80= 98, 177, 297, 318, 428, 549, 584, 585, 710, 763, 802, 958, 1036
+81= 84, 93, 141, 180, 329, 429, 457, 696, 839, 868
+82= 35, 55, 75, 220, 496, 544, 560, 692, 741, 805, 943
+Candidate-search took:  231.0179758
+------------------
+------------------
+------------------
+------------------
+filling VBCX...
+VBCX-filling took:  4.8249295000000245
+Alphabet-fitting...
+Alphabet-fitting took:  0.02001720000001228
+------------------
+------------------
+------------------
+------------------
+Result=5*lY_BaW%#MZ;CSAH!qT<4U K\8,G6.@[i=nLNXRg'>D]$OdE:c3-k9?ojrhem&P10fQ+I2pJ)7V"(/`^bF
+Alphabet-generation took:  236.3575185
+
+
+### And then the Isomorph-Scanning begins, which outputs something like this:
+
+A=28, B=0, C=5,
+Rb%P^-k=8]Jfb^@.q(/n"=-Q!prH_q53 HSa:.5fOLPJ3P-O3Qh?%8#K[cAQI\5:>%94g+jX$j3g$SIKphV_oq/0L?>,AY<-`KP
+pb%P^-k=8]Jfb^@.q(/n"=-Q!=+>Tq53 9:V4.5fOLPJ3P-O3QL:[m`Ko<h`!>i7c&A9`qdN1D-15d-)NcYB^r/*i^"+ahEL*Kd^)B2      AB=6
+Db%P^-k=8]Jfb^@.q(/n"=-Q!elT)Pbp6`YHQn#0X3OHp&-`=Q`_&Q?-0*M8:m*\q]BVf5/$bmJE>6 +IhY47YaI72hJ%#:n(%VMm9`]0LVS4_9+:MU\FB      AC=22
+
+### (You can't see the green markings in this txt-File.... just imagine some random green/red marked letters, okay?)
+### The first line, "A=28, B=0, C=5"  describes the offsets of each message.
+### Green markings are the Letters where all three Rows are Isomorphic to each other.
+### Red Letters are the ones that didn't occur in ANY Isomorph, so any Isomorph-behaviour of them is purely coincidence.
